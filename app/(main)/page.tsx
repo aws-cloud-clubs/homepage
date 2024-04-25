@@ -16,7 +16,7 @@ export default function Home() {
           <source src="/main_video.mp4" type="video/mp4" />
         </video>
         <div className="absolute flex items-center inset-0 bg-neutral-900/75 z-10">
-          <div className="max-w-screen-lg mx-auto px-8 basis-full">
+          <div className="max-w-screen-lg 2xl:max-w-screen-xl mx-auto px-8 basis-full">
             <Image
               src="/logo.svg"
               width={160}
@@ -24,16 +24,22 @@ export default function Home() {
               alt=""
               className=""
             />
-            <h1 className="text-5xl font-bold leading-tight">
+            <h1 className="text-5xl 2xl:text-7xl font-bold !leading-tight">
               학교를 넘어서,
               <br /> 지식과 경험을 확장해요.
             </h1>
 
-            <Link href="/about-us" className="flex text-xl items-center mt-4">
+            <Link
+              href="/about-us"
+              className="2xl:text-2xl flex text-xl items-center mt-4"
+            >
               <span className="mr-2">ACC South Korea 알아보기</span>
               <ArrowRightCircleIcon className="w-8 h-8" />
             </Link>
-            <Link href="/subscribe" className="flex text-xl items-center mt-2">
+            <Link
+              href="/subscribe"
+              className="flex 2xl:text-2xl text-xl items-center mt-2"
+            >
               <span className="mr-2">다음 모집 알림 신청하기</span>
               <ArrowRightCircleIcon className="w-8 h-8" />
             </Link>
@@ -41,7 +47,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="max-w-screen-lg px-8 mt-16 text-white mx-auto">
+      <section className="max-w-screen-lg 2xl:max-w-screen-xl px-8 mt-16 text-white mx-auto">
         <h2 className="text-4xl font-bold">최근 활동</h2>
         <div className="grid grid-cols-3 mt-8 gap-8">
           <Link href="#" className="group">
@@ -72,7 +78,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="max-w-screen-lg px-8 mt-16 text-white mx-auto">
+      <section className="max-w-screen-lg 2xl:max-w-screen-xl px-8 mt-16 text-white mx-auto">
         <h2 className="text-4xl font-bold">최근 발표</h2>
         <div className="grid grid-cols-3 mt-8 gap-8">
           <Link href="#" className="group">
