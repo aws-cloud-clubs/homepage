@@ -4,7 +4,7 @@ import { ArrowLeftCircleIcon } from "@heroicons/react/24/outline";
 
 export default function AboutUsPage() {
   return (
-    <main className="bg-neutral-900 py-16 text-white">
+    <main className="bg-neutral-900 py-16 text-white min-h-screen">
       <nav className="max-w-screen-lg px-8 text-white mx-auto">
         <Link href="/" className="flex text-xl items-center mt-4">
           <ArrowLeftCircleIcon className="w-8 h-8 mr-2" />

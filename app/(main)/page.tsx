@@ -1,10 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRightCircleIcon } from "@heroicons/react/24/outline";
+import Activities from "./Activities";
 
 export default function Home() {
   return (
-    <main className="bg-neutral-900 pb-16">
+    <main className="bg-neutral-900 pb-16 min-h-screen">
       <section className="min-h-96 h-[90vh] relative px-8 py-24 text-white">
         <video
           muted
@@ -36,49 +37,22 @@ export default function Home() {
               <span className="mr-2">ACC South Korea 알아보기</span>
               <ArrowRightCircleIcon className="w-8 h-8" />
             </Link>
-            <Link
+            {/* <Link
               href="/subscribe"
               className="flex 2xl:text-2xl text-xl items-center mt-2"
             >
               <span className="mr-2">다음 모집 알림 신청하기</span>
               <ArrowRightCircleIcon className="w-8 h-8" />
-            </Link>
+            </Link> */}
           </div>
         </div>
       </section>
 
       <section className="max-w-screen-lg 2xl:max-w-screen-xl px-8 mt-16 text-white mx-auto">
-        <h2 className="text-4xl font-bold">최근 활동</h2>
-        <div className="grid grid-cols-3 mt-8 gap-8">
-          <Link href="#" className="group">
-            <div
-              className="relative object-cover aspect-[16/9]
-                transition-transform duration-200 group-hover:-translate-y-1"
-            >
-              <Image src="/accscd.jpg" fill alt="" className="rounded-md" />
-            </div>
-
-            <p className="mt-3 text-sm text-gray-200">모든 학교 | 2024.04.06</p>
-            <p className="font-medium mt-3">ACC Student Community Day 2024 </p>
-          </Link>
-          <Link href="#" className="group">
-            <div
-              className="relative object-cover aspect-[16/9]
-                transition-transform duration-200 group-hover:-translate-y-1"
-            >
-              <Image src="/kwu.jpg" fill alt="" className="rounded-md" />
-            </div>
-            <p className="mt-3 text-sm text-gray-200">
-              광운대학교 | 2024.03.28
-            </p>
-            <p className="font-medium mt-3">
-              광운대학교 2024년 1학기 오리엔테이션
-            </p>
-          </Link>
-        </div>
+        <Activities />
       </section>
 
-      <section className="max-w-screen-lg 2xl:max-w-screen-xl px-8 mt-16 text-white mx-auto">
+      {/* <section className="max-w-screen-lg 2xl:max-w-screen-xl px-8 mt-16 text-white mx-auto">
         <h2 className="text-4xl font-bold">최근 발표</h2>
         <div className="grid grid-cols-3 mt-8 gap-8">
           <Link href="#" className="group">
@@ -107,7 +81,7 @@ export default function Home() {
             </p>
           </Link>
         </div>
-      </section>
+      </section> */}
     </main>
   );
 }
