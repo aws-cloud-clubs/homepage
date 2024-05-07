@@ -70,7 +70,7 @@ export default async function ActivityDetailPage({
           </h1>
           <p className="mt-2 mb-10 font-bold">
             {`${activity.attributes.author} · ${DateTime.fromISO(
-              activity.attributes.publishedAt
+              activity.attributes.publishDate
             ).toFormat("yyyy.MM.dd")}`}
           </p>
 

@@ -6,7 +6,7 @@ import { DateTime } from "luxon";
 async function getActivities() {
   const query = QueryString.stringify(
     {
-      fields: ["title", "author", "club", "publishedAt"],
+      fields: ["title", "author", "club", "publishDate"],
       populate: {
         thumbnail: {
           fields: ["url"],
@@ -64,7 +64,7 @@ export default async function Activities() {
               </p>
               <p className="font-medium mt-2">{activity.attributes.title}</p>
               <p className="text-sm text-gray-200 font-medium mt-1">
-                {DateTime.fromISO(activity.attributes.publishedAt).toFormat(
+                {DateTime.fromISO(activity.attributes.publishDate).toFormat(
                   "yyyy.MM.dd"
                 )}
               </p>
