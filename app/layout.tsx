@@ -2,6 +2,8 @@ import localFont from "next/font/local";
 import type { Metadata } from "next";
 import "./globals.css";
 
+import TopNavigation from "./_component/TopNavigation";
+
 const pretendard = localFont({
   src: "../public/PretendardVariable.woff2",
   display: "swap",
@@ -20,7 +22,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ko">
-      <body className={pretendard.className}>{children}</body>
+      <body className={pretendard.className}>
+        {/* <TopNavigation /> */}
+        {children}
+      </body>
     </html>
   );
 }

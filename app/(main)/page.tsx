@@ -1,7 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRightCircleIcon } from "@heroicons/react/24/outline";
 import Activities from "./Activities";
+import Universities from "./Universities";
+// import Activities from "./Activities";
 
 export default function Home() {
   return (
@@ -30,13 +31,13 @@ export default function Home() {
               <br /> 지식과 경험을 확장해요.
             </h1>
 
-            <Link
+            {/* <Link
               href="/about-us"
               className="2xl:text-2xl flex text-xl items-center mt-4"
             >
               <span className="mr-2">ACC South Korea 알아보기</span>
               <ArrowRightCircleIcon className="w-8 h-8" />
-            </Link>
+            </Link> */}
             {/* <Link
               href="/subscribe"
               className="flex 2xl:text-2xl text-xl items-center mt-2"
@@ -48,39 +49,31 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="max-w-screen-lg 2xl:max-w-screen-xl px-8 mt-16 text-white mx-auto">
-        <Activities />
+      <section className="max-w-screen-lg 2xl:max-w-screen-xl px-8 mt-48 text-white mx-auto text-center">
+        <h2 className="text-4xl font-bold">
+          더 많은 학생들이, 더 클라우드에 익숙해지도록
+        </h2>
+        <p className="mt-16 text-xl text-gray-200">
+          AWS Cloud Club은 AWS에서 지원하는 공식 대학생 커뮤니티 프로그램이에요.
+        </p>
+        <p className="mt-4 text-2xl font-semibold">
+          대학생들이 클라우드에 대한 지식과 경험을 쌓고, 어떤 개발 분야에서도
+          클라우드를 활용할 수 있게 만들어요.
+        </p>
+      </section>
+
+      <section className="bg-white mt-48">
+        <div className="max-w-screen-lg 2xl:max-w-screen-xl py-24 px-8 mx-auto">
+          <Activities />
+        </div>
+      </section>
+
+      <section className="max-w-screen-lg 2xl:max-w-screen-xl px-8 mt-48 text-white mx-auto text-center">
+        <Universities />
       </section>
 
       {/* <section className="max-w-screen-lg 2xl:max-w-screen-xl px-8 mt-16 text-white mx-auto">
-        <h2 className="text-4xl font-bold">최근 발표</h2>
-        <div className="grid grid-cols-3 mt-8 gap-8">
-          <Link href="#" className="group">
-            <div
-              className="relative object-cover aspect-[16/9]
-                transition-transform duration-200 group-hover:-translate-y-1"
-            >
-              <Image src="/accscd.jpg" fill alt="" className="rounded-md" />
-            </div>
-
-            <p className="mt-3 text-sm text-gray-200">모든 학교 | 2024.04.06</p>
-            <p className="font-medium mt-3">ACC Student Community Day 2024 </p>
-          </Link>
-          <Link href="#" className="group">
-            <div
-              className="relative object-cover aspect-[16/9]
-                transition-transform duration-200 group-hover:-translate-y-1"
-            >
-              <Image src="/kwu.jpg" fill alt="" className="rounded-md" />
-            </div>
-            <p className="mt-3 text-sm text-gray-200">
-              광운대학교 | 2024.03.28
-            </p>
-            <p className="font-medium mt-3">
-              광운대학교 2024년 1학기 오리엔테이션
-            </p>
-          </Link>
-        </div>
+        <Activities />
       </section> */}
     </main>
   );

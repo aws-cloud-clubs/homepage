@@ -1,76 +1,93 @@
-import Link from "next/link";
 import Image from "next/image";
-import QueryString from "qs";
-import { DateTime } from "luxon";
 
-async function getActivities() {
-  const query = QueryString.stringify(
-    {
-      fields: ["title", "author", "club", "publishDate"],
-      populate: {
-        thumbnail: {
-          fields: ["url"],
-        },
-      },
-      pagination: { limit: 4 },
-    },
-    { encodeValuesOnly: true }
-  );
-
-  const response = await fetch(
-    `${process.env.STRAPI_ENDPOINT}/api/acc-activities?${query}`,
-    {
-      headers: {
-        Authorization: `Bearer ${process.env.STRAPI_TOKEN}`,
-      },
-    }
-  );
-
-  const body: { data: any[]; meta: any } = await response.json();
-  return body;
-}
+// Assets
+import SampleImage from "/public/images/sample.jpg";
+import RocketIcon from "/public/icons/rocket.svg";
+import BalloonIcon from "/public/icons/balloon.svg";
+import PlanetIcon from "/public/icons/planet.svg";
+import LibraryIcon from "/public/icons/library.svg";
 
 export default async function Activities() {
-  const { data, meta } = await getActivities();
-
   return (
     <>
-      <div className="flex items-center">
-        <h2 className="text-4xl font-bold">최근 활동</h2>
-        {/* <Link href="#" className="text-lg ml-auto flex items-center">
-            <p className="mr-2">모든 최근 활동 보기</p>
-            <ArrowRightCircleIcon className="w-6 h-6" />
-          </Link> */}
-      </div>
-      <div className="grid grid-cols-3 mt-8 gap-8">
-        {data.map((activity) => (
-          <Link
-            key={activity.attributes.id}
-            href={`/activities/${activity.id}`}
-            className="bg-neutral-950 rounded-lg overflow-hidden transition-transform duration-200 hover:-translate-y-1"
-          >
-            <div className="relative aspect-[16/9]">
-              <Image
-                src={activity.attributes.thumbnail.data.attributes.url}
-                fill
-                alt=""
-                className="object-cover"
-              />
-            </div>
+      <h2 className="text-4xl font-bold text-center">
+        2024년 1학기에는, 이렇게 활동했어요.
+      </h2>
 
-            <div className="p-6">
-              <p className="text-sm text-gray-200">
-                {activity.attributes.club}
-              </p>
-              <p className="font-medium mt-2">{activity.attributes.title}</p>
-              <p className="text-sm text-gray-200 font-medium mt-1">
-                {DateTime.fromISO(activity.attributes.publishDate).toFormat(
-                  "yyyy.MM.dd"
-                )}
-              </p>
-            </div>
-          </Link>
-        ))}
+      <div className="mt-32 flex">
+        <div className="w-1/2">
+          <div className="p-4 rounded-3xl border border-gray-200 inline-block">
+            <Image src={RocketIcon} alt="" className="w-9 h-9" />
+          </div>
+          <h3 className="text-3xl font-semibold mt-8">연합 OT</h3>
+          <p className="mt-6 text-gray-600">
+            학기 초에 연합 OT를 진행했어요.
+            <br /> ACC에 대해서 소개하고, 다른 학교의 멤버들과 더 친해지는
+            자리였어요.
+          </p>
+        </div>
+        <Image
+          src={SampleImage}
+          alt=""
+          className="w-1/2 rounded-3xl aspect-[16/9] object-cover"
+        />
+      </div>
+
+      <div className="mt-32 flex">
+        <div className="w-1/2">
+          <div className="p-4 rounded-3xl border border-gray-200 inline-block">
+            <Image src={PlanetIcon} alt="" className="w-9 h-9" />
+          </div>
+          <h3 className="text-3xl font-semibold mt-8">Student Community Day</h3>
+          <p className="mt-6 text-gray-600">
+            학기 초에 연합 OT를 진행했어요.
+            <br /> ACC에 대해서 소개하고, 다른 학교의 멤버들과 더 친해지는
+            자리였어요.
+          </p>
+        </div>
+        <Image
+          src={SampleImage}
+          alt=""
+          className="w-1/2 rounded-3xl aspect-[16/9] object-cover"
+        />
+      </div>
+
+      <div className="mt-32 flex">
+        <div className="w-1/2">
+          <div className="p-4 rounded-3xl border border-gray-200 inline-block">
+            <Image src={BalloonIcon} alt="" className="w-9 h-9" />
+          </div>
+          <h3 className="text-3xl font-semibold mt-8">연합 세션</h3>
+          <p className="mt-6 text-gray-600">
+            학기 초에 연합 OT를 진행했어요.
+            <br /> ACC에 대해서 소개하고, 다른 학교의 멤버들과 더 친해지는
+            자리였어요.
+          </p>
+        </div>
+        <Image
+          src={SampleImage}
+          alt=""
+          className="w-1/2 rounded-3xl aspect-[16/9] object-cover"
+        />
+      </div>
+
+      <div className="mt-32 flex">
+        <div className="w-1/2">
+          <div className="p-4 rounded-3xl border border-gray-200 inline-block">
+            <Image src={LibraryIcon} alt="" className="w-9 h-9" />
+          </div>
+          <h3 className="text-3xl font-semibold mt-8">스터디</h3>
+          <p className="mt-6 text-gray-600">
+            학기 초에 연합 OT를 진행했어요.
+            <br /> ACC에 대해서 소개하고, 다른 학교의 멤버들과 더 친해지는
+            자리였어요.
+          </p>
+        </div>
+        <Image
+          src={SampleImage}
+          alt=""
+          className="w-1/2 rounded-3xl aspect-[16/9] object-cover"
+        />
       </div>
     </>
   );

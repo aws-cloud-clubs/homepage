@@ -1,9 +1,8 @@
 import Link from "next/link";
-import Image from "next/image";
 import QueryString from "qs";
 import { ArrowLeftCircleIcon } from "@heroicons/react/24/outline";
-import BlockRendererClient from "@/app/_component/BlockRendererClient";
 import { DateTime } from "luxon";
+import BlockRendererClient from "./BlockRendererClient";
 
 export async function generateStaticParams() {
   const query = QueryString.stringify(
