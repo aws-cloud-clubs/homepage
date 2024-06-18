@@ -1,7 +1,11 @@
 import Image from "next/image";
 
 // Assets
-import SampleImage from "/public/images/sample.jpg";
+import OTImage from "/public/images/ot.png";
+import ACCSCDImage from "/public/images/accscd.png";
+import SessionImage from "/public/images/session.png";
+import StudyImage from "/public/images/study.png";
+
 import RocketIcon from "/public/icons/rocket.svg";
 import BalloonIcon from "/public/icons/balloon.svg";
 import PlanetIcon from "/public/icons/planet.svg";
@@ -27,7 +31,7 @@ export default async function Activities() {
           </p>
         </div>
         <Image
-          src={SampleImage}
+          src={OTImage}
           alt=""
           className="w-1/2 rounded-3xl aspect-[16/9] object-cover"
         />
@@ -46,7 +50,7 @@ export default async function Activities() {
           </p>
         </div>
         <Image
-          src={SampleImage}
+          src={ACCSCDImage}
           alt=""
           className="w-1/2 rounded-3xl aspect-[16/9] object-cover"
         />
@@ -65,7 +69,7 @@ export default async function Activities() {
           </p>
         </div>
         <Image
-          src={SampleImage}
+          src={SessionImage}
           alt=""
           className="w-1/2 rounded-3xl aspect-[16/9] object-cover"
         />
@@ -84,7 +88,7 @@ export default async function Activities() {
           </p>
         </div>
         <Image
-          src={SampleImage}
+          src={StudyImage}
           alt=""
           className="w-1/2 rounded-3xl aspect-[16/9] object-cover"
         />

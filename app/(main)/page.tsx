@@ -4,6 +4,8 @@ import Activities from "./Activities";
 import Universities from "./Universities";
 // import Activities from "./Activities";
 
+import BgBlurImage from "/public/images/bg-blur.svg";
+
 export default function Home() {
   return (
     <main className="bg-neutral-900 pb-16 min-h-screen">
@@ -63,18 +65,23 @@ export default function Home() {
       </section>
 
       <section className="bg-white mt-48">
-        <div className="max-w-screen-lg 2xl:max-w-screen-xl py-24 px-8 mx-auto">
-          <Activities />
+        <div className="w-full bg-gradient-to-b from-white to-[#F4F3F6]">
+          <div className="max-w-screen-lg 2xl:max-w-screen-xl py-24 px-8 mx-auto">
+            <Activities />
+          </div>
         </div>
       </section>
 
       <section className="max-w-screen-lg 2xl:max-w-screen-xl px-8 mt-48 text-white mx-auto text-center">
-        <Universities />
+        <div className="relative">
+          <Image
+            src={BgBlurImage}
+            alt=""
+            className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rotate-45"
+          />
+          <Universities />
+        </div>
       </section>
-
-      {/* <section className="max-w-screen-lg 2xl:max-w-screen-xl px-8 mt-16 text-white mx-auto">
-        <Activities />
-      </section> */}
     </main>
   );
 }
