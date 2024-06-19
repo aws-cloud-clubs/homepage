@@ -59,8 +59,8 @@ export default function Home() {
           AWS Cloud Club은 AWS에서 지원하는 공식 대학생 커뮤니티 프로그램이에요.
         </p>
         <p className="mt-4 text-2xl font-semibold">
-          대학생들이 클라우드에 대한 지식과 경험을 쌓고, 어떤 개발 분야에서도
-          클라우드를 활용할 수 있게 만들어요.
+          대학생들이 클라우드에 대한 지식과 경험을 쌓고, <br />
+          어떤 개발 분야에서도 클라우드를 활용할 수 있게 만들어요.
         </p>
       </section>
 
